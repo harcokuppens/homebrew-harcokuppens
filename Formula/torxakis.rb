@@ -18,14 +18,14 @@ class Torxakis < Formula
 
   def install
     ohai "running install"
-    jobs = ENV.make_jobs
-    system "stack", "-j#{jobs}", "--stack-yaml=stack_linux.yaml", "setup"
-    system "stack", "-j#{jobs}", "--stack-yaml=stack_linux.yaml", "--local-bin-path=#{bin}", "install"
+    system "stack", "--stack-yaml=stack_linux.yaml", "setup"
+    system "stack", "--stack-yaml=stack_linux.yaml", "--local-bin-path=#{bin}", "install"
   end
 
   test do
     ohai "running basic test"
     output_torxakis = pipe_output('printf "eval 33+7777777777777\nq" |torxakis  2>&1')
     assert_match(/7777777777810/, output_torxakis, 'torxakis failed in doing "eval 33+7777777777777"')
+    ohai "test succesfull"
   end
 end
