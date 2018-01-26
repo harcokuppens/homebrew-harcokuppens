@@ -16,6 +16,8 @@ class Torxakis < Formula
     ENV.deparallelize
     system "stack", "-j#{jobs}", "--stack-yaml=stack_linux.yaml", "setup"
     system "stack", "-j#{jobs}", "--stack-yaml=stack_linux.yaml", "--local-bin-path=#{bin}", "install"
+    prefix.install "examps"
+    prefix.install "docs"
   end
 
   test do
