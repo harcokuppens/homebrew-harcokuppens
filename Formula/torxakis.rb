@@ -18,8 +18,10 @@ class Torxakis < Formula
 
   def install
     ohai "running install"
-    system "stack", "--stack-yaml=stack_linux.yaml", "setup"
-    system "stack", "--stack-yaml=stack_linux.yaml", "--local-bin-path=#{bin}", "install"
+    jobs = ENV.make_jobs
+    ENV.deparallelize
+    system "stack", "-j#{jobs}", "--stack-yaml=stack_linux.yaml", "setup"
+    system "stack", "-j#{jobs}", "--stack-yaml=stack_linux.yaml", "--local-bin-path=#{bin}", "install"
   end
 
   test do
