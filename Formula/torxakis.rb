@@ -9,12 +9,13 @@ class Torxakis < Formula
   bottle do
     cellar :any_skip_relocation
     root_url "https://raw.githubusercontent.com/harcokuppens/homebrew-homebrew/master/bottles/"
-    sha256 "7c9ebc6abb1edb4bef5977cf85164cbf0aa3344ddcbf102e0aa1cc344645e337" => :high_sierra
+    sha256 "1f8a845a2e8c3622a5d6590aa07fc1f44dee1d1315216f823feb41850be388af" => :high_sierra
+    sha256 "e8ef8d4f47bb081fffa3d8b7bf25535fd2c6963df38ecfd7a2c8e3676c87ffe8" => :sierra
+    sha256 "139c428b838f459ebeef7ea1984a26280cae1f0749e44ec0888f766b9f61877c" => :el_capitan
   end
 
   depends_on "haskell-stack" => :build
-  depends_on "z3" => :recommended
-  depends_on "cvc4" => :optional
+  depends_on "z3" => :run
 
   def install
     ohai "running install"
