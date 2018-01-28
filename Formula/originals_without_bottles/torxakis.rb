@@ -7,8 +7,7 @@ class Torxakis < Formula
   head "https://github.com/TorXakis/TorXakis.git"
 
   depends_on "haskell-stack" => :build
-  depends_on "z3" => :recommended
-  depends_on "cvc4" => :optional
+  depends_on "z3" => :run
 
   def install
     ohai "running install"
