@@ -1,4 +1,4 @@
-# my personal homebrew tap
+# Harco Kuppens's personal homebrew tap
 
 
 Add tap with command:  
